@@ -25,8 +25,10 @@ app.add_middleware(
 )
 
 app.include_router(chat_router)
+
 templates=Jinja2Templates(directory="frontend/templates")
 @app.get("/",response_class=HTMLResponse)
+
 async def home(request:Request):
     return templates.TemplateResponse(
         request=request,
